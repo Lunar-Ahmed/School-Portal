@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Registration Form</title>
+    <link rel="stylesheet" href="/static/cs/form.css">
+</head>
+<body>
+    <form action="{{ url_for('register') }}" method="POST">
+        <div class="container">
+            <h1 style="text-align: center;">Student Registration</h1>
+            <hr>
+            <label for="firstname"><b>FirstName</b>
+                <i class="fa fa-user"></i>
+            </label>
+            <input type="text" placeholder="Enter FirstName" name="firstname" id="firstname" required>
+
+            <label for="lastname"><b>LastName</b>
+            </label>
+            <input type="text" placeholder="Enter LastName" name="lastname" id="lastname" required>
+
+            <label for="middlename"><b>MiddleName</b></label>
+            <input type="text" placeholder="Enter MiddleName" name="middlename" id="middlename" required>
+
+            <label for="addnumber"><b>Admission No</b></label>
+            <input type="text" placeholder="Enter Addmission Number" name="addnumber" id="addnumber" required>
+
+            <label for="state"><b>State</b></label>
+            <input type="text" placeholder="Enter State" name="state" id="state" required>
+
+            <label for="country"><b>Country</b></label>
+            <input type="text" placeholder="Enter country" name="country" id="country" required>
+
+            <label for="lga"><b>LGA</b></label>
+            <input type="text" placeholder="Enter Local Gov Area" name="lga" id="lga" required>
+
+            <label for="address"><b>Address</b></label>
+            <input type="text" placeholder="Enter Address" name="address" id="address" required>
+
+            <label for="dob"><b>Dob</b></label>
+            <input type="text" placeholder="Enter Date of Birth" name="dob" id="dob" required>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+            <label for="guardian"><b>Guardian</b></label>
+            <input type="text" placeholder="Enter Guardian" name="guardian" id="guardian" required>
+
+            <label for="password"><b>Password</b></label>
+            <input type="text" placeholder="Enter Password" name="password" id="password" required>
+
+            <label for="table"><b>Class</b></label>
+            <select name="dropdown" id="dropdown" placeholder="Select Class">
+                <option class="classchoose" value="">CHOOSE CLASS</option> 
+                <option value="school1">J.S.S 1</option>
+                <option value="school2">J.S.S 2</option>
+                <option value="school3">J.S.S 3</option>
+                <option value="school1">S.S 1</option>
+                <option value="school2">S.S 2</option>
+                <option value="school3">S.S 3</option>
+            </select>
+
+            <hr>
+            <div class="msg">{{ msg }}</div>
+            <input type="submit" value="submit">
+        </div>
+    </form>
+</body>
+</html>
+

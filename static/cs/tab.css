@@ -1,0 +1,61 @@
+.jssone{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    min-width: fit-content;
+    height: fit-content;
+    margin-right: 7;
+    text-align: center;
+    background-color: #98b7bd;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    padding-left: 50px;
+  }
+  
+  .jssone:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .contain{
+    padding: 2px 16px; 
+  }
+
+ .jsstwo{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    min-width: fit-content;
+    height: fit-content;
+    text-align: center;
+    background-color: #98b7bd;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+  }
+  
+  .jsstwo:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .contain{
+    padding: 2px 16px; 
+  }
+
+  .jssthree{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    min-width: fit-content;
+    height: fit-content;
+    text-align: center;
+    background-color: #98b7bd;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+  }
+  
+  .jssthree:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .contain{
+    padding: 2px 16px; 
+  }
