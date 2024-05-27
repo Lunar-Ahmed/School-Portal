@@ -5,9 +5,10 @@
     padding-right: 30px;
     padding-top: 20px;
     padding-bottom: 20px; */
-    background-color:transparent;
+    /* background-color:transparent; */
     color: white;
     border: none;
+    background-color: rgb(56, 40, 40);
 }
 .container .dropdown button:hover{
     color: #0dcaf0;

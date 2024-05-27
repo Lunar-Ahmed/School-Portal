@@ -283,6 +283,25 @@ def upload_file():
         mysql.connection.commit()
         return '<h1>File uploaded successfully</h1>'
 
+@app.route('/bursar/login', methods=['GET', 'POST'])
+def bursar_login():
+    msg = ''
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
+        username = request.form['username']
+        password = request.form['password']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM reg WHERE username = % s AND password = % s', (username, password, ))
+        account = cursor.fetchone()
+        if account:
+            session['loggedin'] = True
+            session['Id'] = account['id']
+            session['username'] = account['username']
+            msg = 'Logged in successfully !'
+            return render_template('bursar.html', msg = 'username')
+        else:
+            msg = 'Incorrect username / password !'
+    return render_template('bursar_login.html', msg = msg)
+
 # @app.route('//<int:id>')
 # def file(id):
 #     cursor = mysql.connection.cursor()
