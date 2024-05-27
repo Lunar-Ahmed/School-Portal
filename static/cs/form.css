@@ -83,8 +83,8 @@ table{
         /* Add padding to containers */
         .container {
             padding: 16px;
-            width: 50%;
-            margin-left: 25%;
+            width: 30%;
+            margin-left: 35%;
             /* border: 2px solid #0dcaf0; */
         }
 
@@ -109,11 +109,15 @@ table{
 
         /* Overwrite default styles of hr */
         hr {
-            border: 1px solid black;
+            border: 1px solid #0dcaf0;
             margin-bottom: 25px;
+            color: #0dcaf0;
         }
         h1{
-            font-size: 100%;
+            min-width: 100%;
+            letter-spacing: 3px;
+            font-weight: bolder;
+            color: #0dcaf0;
         }
 
         /* Set a style for the submit/register button */
@@ -124,8 +128,9 @@ table{
             margin: 8px 0;
             border: none;
             cursor: pointer;
-            width: 100%;
+            width: 40%;
             opacity: 0.9;
+            margin-left: 30%;
         }
 
         .registerbtn:hover {
