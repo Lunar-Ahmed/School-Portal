@@ -18,7 +18,7 @@ app.config['MYSQL_DB'] = 'school'
 
 mysql = MySQL(app)
 
-#  JOSHUA'S CODE START
+# page routes CODE START
 
 @app.route("/")
 def index():
@@ -62,6 +62,7 @@ def bursar():
         return redirect(url_for('bursar.html'))
     return render_template('bursar.html')
      
+#Form routes
  
 @app.route('/register/admin', methods=['GET', 'POST'])
 def admin_register():
@@ -98,17 +99,17 @@ def register():
         dropdown = request.form['dropdown']
         cursor = mysql.connection.cursor()
         if dropdown == 'school1':
-            cursor.execute('INSERT INTO student VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (firstname, lastname, middlename, addnumber,state, country, lga, address, dob, email, guardian, password))
-        elif dropdown == 'school2':
             cursor.execute('INSERT INTO std1 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (firstname, lastname, middlename, addnumber,state, country, lga, address, dob, email, guardian, password))
+        elif dropdown == 'school2':
+            cursor.execute('INSERT INTO std2 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (firstname, lastname, middlename, addnumber,state, country, lga, address, dob, email, guardian, password))
         elif dropdown == 'school3':
-            cursor.execute('INSERT INTO student VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (firstname, lastname, middlename, addnumber,state, country, lga, address, dob, email, guardian, password))
+            cursor.execute('INSERT INTO std3 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (firstname, lastname, middlename, addnumber,state, country, lga, address, dob, email, guardian, password))
         elif dropdown == 'school4':
-            cursor.execute('INSERT INTO student VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (firstname, lastname, middlename, addnumber,state, country, lga, address, dob, email, guardian, password))
+            cursor.execute('INSERT INTO std4 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (firstname, lastname, middlename, addnumber,state, country, lga, address, dob, email, guardian, password))
         elif dropdown == 'school5':
-            cursor.execute('INSERT INTO student VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (firstname, lastname, middlename, addnumber,state, country, lga, address, dob, email, guardian, password))
+            cursor.execute('INSERT INTO std5 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (firstname, lastname, middlename, addnumber,state, country, lga, address, dob, email, guardian, password))
         elif dropdown == 'school6':
-            cursor.execute('INSERT INTO student VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (firstname, lastname, middlename, addnumber,state, country, lga, address, dob, email, guardian, password))
+            cursor.execute('INSERT INTO std6 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (firstname, lastname, middlename, addnumber,state, country, lga, address, dob, email, guardian, password))
         mysql.connection.commit()
         msg = 'You have successfully registered!'
         return render_template('user_reg.html', msg=msg)
@@ -137,8 +138,6 @@ def login():
     return render_template('login.html', msg = msg)
 
 
-
-
 @app.route('/register/user', methods=['GET', 'POST'])
 def user_register():
     msg = ''
@@ -155,9 +154,9 @@ def user_register():
     elif request.method == 'POST':
         msg = 'Please fill out the form!'
     return render_template('user_register.html', msg=msg)
-# JOSHUA'S CODE ENDS
 
 # ------------------------------------------------
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html')

@@ -79,6 +79,9 @@ table{
     font-weight: bolder;
 } */
 
+body{
+    background-image: url('../images/9.png');
+}
 
         /* Add padding to containers */
         .container {
@@ -91,6 +94,7 @@ table{
         /* Full-width input fields */
         input[type="text"],
         input[type="password"],
+        input[type="date"],
         select {
             width: 95%;
             padding: 15px;
@@ -102,6 +106,7 @@ table{
 
         input[type="text"]:focus,
         input[type="password"]:focus,
+        input[type="date"],
         select:focus {
             background-color: #ddd;
             outline: none;
@@ -117,7 +122,7 @@ table{
             min-width: 100%;
             letter-spacing: 3px;
             font-weight: bolder;
-            color: #0dcaf0;
+            color: #000;
         }
 
         /* Set a style for the submit/register button */
@@ -147,4 +152,14 @@ table{
         .classchoose:hover{
             color: none;
             background-color: none;
+        }
+
+        .msg h1{
+            font-weight: bolder;
+            font-style: italic;
+            color: white;
+        }
+
+        input[type="date"] ::placeholder{
+            font-size: larger;          
         }

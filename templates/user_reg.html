@@ -10,6 +10,7 @@
     <form action="{{ url_for('register') }}" method="POST">
         <div class="container">
             <h1 style="text-align: center;">Student Registration</h1>
+            <div class="msg"><h1>{{ msg }}</h1></div>
             <hr>
             <label for="firstname"><b>FirstName</b>
                 <i class="fa fa-user"></i>
@@ -39,7 +40,7 @@
             <input type="text" placeholder="Enter Address" name="address" id="address" required>
 
             <label for="dob"><b>Dob</b></label>
-            <input type="text" placeholder="Enter Date of Birth" name="dob" id="dob" required>
+            <input type="date" placeholder="Enter Date of Birth" name="dob" id="dob" required>
 
             <label for="email"><b>Email</b></label>
             <input type="text" placeholder="Enter Email" name="email" id="email" required>
@@ -56,13 +57,12 @@
                 <option value="school1">J.S.S 1</option>
                 <option value="school2">J.S.S 2</option>
                 <option value="school3">J.S.S 3</option>
-                <option value="school1">S.S 1</option>
-                <option value="school2">S.S 2</option>
-                <option value="school3">S.S 3</option>
+                <option value="school4">S.S 1</option>
+                <option value="school5">S.S 2</option>
+                <option value="school6">S.S 3</option>
             </select>
 
             <hr>
-            <div class="msg">{{ msg }}</div>
             <input type="submit" value="submit">
         </div>
     </form>
