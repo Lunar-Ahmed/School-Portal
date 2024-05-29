@@ -218,11 +218,11 @@ def upload():
 @app.route('/user/login', methods=['GET', 'POST'])
 def user_login():
     msg = ''
-    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
-        username = request.form['username']
+    if request.method == 'POST' and 'pry'+'username' in request.form and 'password' in request.form:
+        'pry'+ username = request.form['pry'+'username']
         password = request.form['password']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM reg WHERE username = % s AND password = % s', (username, password, ))
+        cursor.execute('SELECT * FROM reg WHERE username = % s AND password = % s', ('pry'+ username, password, ))
         account = cursor.fetchone()
         if account:
             session['loggedin'] = True
