@@ -220,10 +220,9 @@ def user_login():
     msg = ''
     if request.method == 'POST' and 'pry'+'username' in request.form and 'password' in request.form:
         username = request.form['username']
-        modified_username = 'pry'+ username
         password = request.form['password']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM reg WHERE username = % s AND password = % s', (modified_username, password, ))
+        cursor.execute('SELECT * FROM reg WHERE username = % s AND password = % s', (username, password, ))
         account = cursor.fetchone()
         if account:
             session['loggedin'] = True
