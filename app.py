@@ -219,7 +219,7 @@ def upload():
 def user_login():
     msg = ''
     if request.method == 'POST' and 'pry'+'username' in request.form and 'password' in request.form:
-        'pry'+ username = request.form['pry'+'username']
+        modified_username = request.form['pry'+'username']
         password = request.form['password']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM reg WHERE username = % s AND password = % s', ('pry'+ username, password, ))
