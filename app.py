@@ -220,9 +220,9 @@ def user_login():
     msg = ''
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
         username = request.form['username']
-        modified_username = 'shs' + username
         password = request.form['password']
-        modified_username = 'pry' + username
+        primary = 'pry'
+        modified_username = primary + username
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM reg WHERE username = % s AND password = % s', (modified_username, password, ))
         account = cursor.fetchone()
